@@ -12,4 +12,376 @@ body {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  line-height: inherit;
+}
+
+/*
+1. 防止内边距和边框影响元素宽度.
+2. 允许通过仅添加边框宽度来向元素添加边框.
+*/
+
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  border-width: 0;
+  border-style: solid;
+  border-color: currentColor;
+}
+
+::before,
+::after {
+  --tw-content: '';
+}
+
+/*
+1. 在所有浏览器中使用一致合理的行高.
+2. 防止在 iOS 中调整字体大小后的方向变化.
+3. 使用更易读的制表符大小.
+4. 默认使用用户配置的 `sans` 字体家族.
+5. 默认使用用户配置的 `sans` 字体特征设置.
+6. 默认使用用户配置的 `sans` 字体变体设置.
+7. 禁用 iOS 上的 tap 高亮.
+*/
+
+html,
+:host {
+  line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
+  -moz-tab-size: 4;
+  tab-size: 4;
+  font-family: ui-monospace, 'Liberation Mono', monospace;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/*
+1. 在 Firefox 中添加正确的高度.
+2. 在 Firefox 中修正边框颜色继承.
+3. 确保水平规则默认可见.
+*/
+
+hr {
+  height: 0;
+  color: inherit;
+  border-top-width: 1px;
+}
+
+/*
+在 Chrome、Edge 和 Safari 中添加正确的文本装饰.
+*/
+
+abbr:where([title]) {
+  text-decoration: underline dotted;
+}
+
+/*
+移除标题的默认字体大小和权重.
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+/*
+重置链接以优化为选择性样式，而不是默认样式.
+*/
+
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/*
+在 Edge 和 Safari 中添加正确的字体权重.
+*/
+
+b,
+strong {
+  font-weight: bolder;
+}
+
+/*
+1. 默认使用用户配置的 `mono` 字体家族.
+2. 默认使用用户配置的 `mono` 字体特征设置.
+3. 默认使用用户配置的 `mono` 字体变体设置.
+4. 在所有浏览器中修正 `em` 字体大小.
+*/
+
+code,
+kbd,
+samp,
+pre {
+  font-family: ui-monospace, 'Liberation Mono', monospace;
+  font-size: 1em;
+}
+
+/*
+在所有浏览器中添加正确的字体大小.
+*/
+
+small {
+  font-size: 80%;
+}
+
+/*
+在所有浏览器中防止 `sub` 和 `sup` 元素影响行高.
+*/
+
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/*
+1. 在 Chrome 和 Safari 中移除表格内容的文本缩进.
+2. 在所有 Chrome 和 Safari 中修正表格边框颜色继承. 
+3. 默认情况下移除表格边框之间的间距.
+*/
+
+table {
+  text-indent: 0;
+  border-color: inherit;
+  border-collapse: collapse;
+}
+
+/*
+1. 在所有浏览器中更改字体样式.
+2. 在 Firefox 和 Safari 中移除边距.
+3. 在所有浏览器中移除默认内边距.
+*/
+
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit;
+  font-feature-settings: inherit;
+  font-variation-settings: inherit;
+  font-size: 100%;
+  font-weight: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+在 Edge 和 Firefox 中移除文本转换的继承性
+*/
+
+button,
+select {
+  text-transform: none;
+}
+
+/*
+1. 修正 iOS 和 Safari 中无法对可点击类型进行样式设置的问题.
+2. 移除默认按钮样式.
+*/
+
+button {
+  -webkit-appearance: button;
+  /* 1 */
+  background-color: transparent;
+  /* 2 */
+  background-image: none;
+  /* 2 */
+}
+
+/*
+在所有可聚焦元素上使用现代 Firefox 焦点样式
+*/
+
+:-moz-focusring {
+  outline: auto;
+}
+
+/*
+在 Firefox 中移除额外的 `:invalid` 样式
+*/
+
+:-moz-ui-invalid {
+  box-shadow: none;
+}
+
+/*
+修正 Chrome 和 Firefox 中的垂直对齐效果
+*/
+
+progress {
+  vertical-align: baseline;
+}
+
+/*
+修正 Safari 中增、减按钮的鼠标指针样式
+*/
+
+::-webkit-inner-spin-button,
+::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/*
+1. 修正 Chrome 和 Safari 中出现的异常显示问题.
+2. 修正 Safari 中的大纲样式.
+*/
+
+[type='search'] {
+  -webkit-appearance: textfield;
+  outline-offset: -2px;
+}
+
+/*
+在 macOS 上的 Chrome 和 Safari 中移除内层边距.
+*/
+
+::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/*
+1. 修正 iOS 和 Safari 中无法对可点击类型进行样式设置的问题.
+2. 在 Safari 中将字体属性更改为 `inherit` .
+*/
+
+::-webkit-file-upload-button {
+  -webkit-appearance: button;
+  font: inherit;
+}
+
+/*
+在 Chrome 和 Safari 中添加正确的显示效果.
+*/
+
+summary {
+  display: list-item;
+}
+
+/*
+去除适用于相应元素的默认间距和边框
+*/
+
+blockquote,
+dl,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+figure,
+p,
+pre {
+  margin: 0;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+}
+
+legend {
+  padding: 0;
+}
+
+ol,
+ul,
+menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+重置对话框的默认样式.
+*/
+dialog {
+  padding: 0;
+}
+
+/*
+默认情况下防止横向调整文本区域的尺寸
+*/
+
+textarea {
+  resize: vertical;
+}
+
+/*
+1. 重置 Firefox 中默认占位符的不透明度
+2. 将默认占位符颜色设置为用户已配置的灰色 400 色.
+*/
+
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: #9ca3af;
+}
+
+/*
+设置按钮的默认光标.
+*/
+
+button,
+[role="button"] {
+  cursor: pointer;
+}
+
+/*
+确保禁用按钮不会获得指针光标
+*/
+:disabled {
+  cursor: default;
+}
+
+/*
+1. 使替换元素默认显示为“块级元素”
+2. 添加 `vertical-align: middle` 属性，以便在默认情况下更合理地对替换元素进行对齐
+   这可能会在某些工具中引发考虑不周的 lint 错误，但这是经过设计而包含在内的.
+*/
+
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+
+/* 将图像和视频限制在父元素的宽度范围内，并保留其固有的长宽比例 */
+
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+
+/* 使带有 HTML 隐藏属性的元素在默认状态下保持隐藏状态 */
+[hidden] {
+  display: none;
 }
