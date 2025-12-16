@@ -9,6 +9,11 @@ const router = createRouter({
       name: 'home',
       component: HomeView,
     },
+    {
+      path: '/echarts',
+      name: 'echarts',
+      component: () => import('../components/eCharts/demo.vue'),
+    },
     // {
     //   path: '/about',
     //   name: 'about',
